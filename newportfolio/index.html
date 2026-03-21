@@ -4,384 +4,440 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chetan-Portfolio</title>
+    <title>Chetan | Portfolio</title>
+    <link rel="icon" type="image/png" href="images/plogo copy.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="png" href="images/plogo copy.png">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script src="script.js"></script>
-    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 </head>
 
 <body>
-    <header class="navbar">
-        <div class="logo">
-            <a href="#home"><img src="images/gifhy-unscreen.gif" alt="Logo"></a>
+    <header class="navbar" id="top">
+        <div class="brand">
+            <img src="images/gifhy-unscreen.gif" alt="CS logo" class="brand-mark">
+            <div class="brand-text">
+                <span class="eyebrow">Software Developer</span>
+                <a href="#home">Chetan</a>
+            </div>
         </div>
-        <div class="logo">
-            <h1><a href="#home">Chetan Sharwal</a></h1>
-        </div>
-        <nav>
-            
-            <ul class="side-bar">
-                <li onclick="toggleSidebar()">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3">
-                        <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/>
-                    </svg>
-                </li>
-            </ul>
-            <ul class="navbar-selector">
-                <a href="#home"><li>Home</li></a>
-                <a href="#about"><li>About</li></a>
-                <a href="#experience"><li>Experience</li></a>
-                <a href="#skills"><li>Skills</li></a>
-                <a href="#education"><li>Education</li></a>
-                <a href="#project"><li>Project</li></a>
-                <a href="#contact"><li>Contact</li></a>
-            </ul>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+        </button>
+        <nav class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#experience">Experience</a>
+            <a href="#skills">Skills</a>
+            <a href="#education">Education</a>
+            <a href="#project">Projects</a>
+            <a href="#contact">Contact</a>
         </nav>
     </header>
-    <!-- ----------------home------------- -->
-    <section class="hero" id="home">
-        <div class="profile-pic">
-            <img src="images/pass 2.jpg" alt="Profile Picture">
-        </div>
-        <div class="hero-content">
-            <h1>Hi There, <br> I'm Chetan</h1>
-            <p>Aspiring <span class="highlight"></span></p>
-            <a href="#about" class="btn">About Me</a>
-            <div class="social-icons">
-                <a href="https://www.linkedin.com/in/chetan-sharwal/" target="_blank"><i
-                        class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/Nitinsharwal" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="nitinparjapat94@gmail.com"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-copy reveal">
+                <p class="eyebrow">Backend / FastAPI / GenAI and Data Engineer curious</p>
+                <h1>Hi, I'm Chetan - A <span class="highlight"></span></h1>
+                <p class="lede">Software Developer based in Panipat, Haryana. I build scalable web apps with Python,
+                    FastAPI, Django, REST and secure auth, plus AI features powered by LangChain and Data science and
+                    engineer enthusiast.</p>
+                <div class="pill-row">
+                    <span class="pill">Open to Software Developer and Data Engineer roles</span>
+                    <span class="pill">Available for Internships / Full time</span>
+                </div>
+                <div class="cta-row">
+                    <a class="btn primary" href="#contact">Let's talk</a>
+                    <a class="btn ghost" href="images/ChetanResume.pdf" target="_blank" rel="noopener">View Resume</a>
+                </div>
+                <div class="social-row">
+                    <a href="https://www.linkedin.com/in/chetan-sharwal/" aria-label="LinkedIn" target="_blank"
+                        rel="noopener"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/Nitinsharwal" aria-label="GitHub" target="_blank" rel="noopener"><i
+                            class="fab fa-github"></i></a>
+                    <a href="mailto:nitinparjapat94@gmail.com" aria-label="Email"><i class="fa fa-envelope"></i></a>
+                    <a href="tel:+918221985564" aria-label="Phone"><i class="fa fa-phone"></i></a>
+                </div>
+                <div class="contact-mini">
+                    <span><i class="fa fa-location-dot"></i> Panipat, Haryana, India</span>
+                    <span><i class="fa fa-phone"></i> +91 8221985564</span>
+                    <span><i class="fa fa-envelope"></i> nitinparjapat94@gmail.com</span>
+                </div>
             </div>
-        </div>
-        <div class="profile-logo">
-            <img src="images/Boylogo.png" alt="profile-logo">
-        </div>
-    </section>
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="container">
-            <div class="about-content">
-                <h1>About Me</h1>
-                <p>
-                    Hii! I'm Chetan, Motivated and enthusiastic with a strong desire to contribute to innovative
-                    projects with expertise in Django, Python, Sql, HTML, CSS. Recently I'm a Graduated Bachelor degree in computer application. I enjoy creating efficient, secure, and scalable
-                    systems that bring value to users. My passion lies in solving real-world problems through
-                    technology.
-                </p>
-                <p>
-                    Outside of programming, I love contributing to community projects, participating in competitions,
-                    and mentoring fellow learners.
-                </p>
-                <a href="#contact" class="btn">Contact Me</a>
-                <a href="images/chetan_s_Resume.pdf" class="btn">My Resume</a>
+            <div class="hero-visual reveal">
+                <div class="orb"></div>
+                <div class="avatar-card">
+                    <div class="avatar-frame">
+                        <img src="images/pass 2.jpg" alt="Chetan portrait">
+                    </div>
+                </div>
+                <div class="hero-badges">
+                    <span>6+ projects shipped</span>
+                    <span>Python + FastAPI + Django</span>
+                    <span>Cybersecurity trainee</span>
+                </div>
             </div>
-            <div class="about-image">
-                <img src="images/picme.png" alt="Profile Picture">
+        </section>
+
+        <section class="about" id="about">
+            <div class="section-head">
+                <p class="eyebrow">Profile</p>
+                <h2>About Me</h2>
+                <p class="muted">Software Developer skilled in building scalable web applications with Python, FastAPI,
+                    Django, REST, database optimization, secure authentication, and GenAI integrations.</p>
             </div>
-        </div>
-    </section>
-    <!-- Experience Section -->
-    <section class="experience" id="experience">
-        <div class="container">
-            <h1>My Experience</h1>
-            <p>A journey of learning, growth, and impactful contributions.</p>
+            <div class="about-grid">
+                <div class="card reveal">
+                    <h3>What I do</h3>
+                    <p>I design and build backend services, dashboards, and data workflows with Python, Django, SQL, and
+                        Pandas. I enjoy turning ideas into shipped features with clean code and thoughtful UI touches.
+                    </p>
+                </div>
+                <div class="card reveal">
+                    <h3>Currently</h3>
+                    <p>Building FastAPI/Django services, adding JWT/OAuth2 auth, optimizing SQLAlchemy queries, and
+                        exploring LangChain + Hugging Face for AI features.</p>
+                    <div class="tags">
+                        <span>Python</span><span>FastAPI</span><span>Django</span><span>SQLAlchemy</span><span>LangChain</span>
+                    </div>
+                </div>
+                <div class="card reveal">
+                    <h3>Interests</h3>
+                    <p>Playing cricket, experimenting with automation scripts, and exploring ML use-cases that make
+                        everyday workflows smarter.</p>
+                    <div class="tags">
+                        <span>Cricket</span><span>Automation</span><span>ML</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="experience" id="experience">
+            <div class="section-head">
+                <p class="eyebrow">Experience</p>
+                <h2>Journey so far</h2>
+                <p class="muted">Learning in public through internships, security training, and community work.</p>
+            </div>
             <div class="timeline">
-                <!-- Experience 1 -->
-                <div class="timeline-card">
+                <div class="timeline-item reveal">
+                    <div class="dot"></div>
                     <div class="timeline-content">
-                        <h2> Code Alpha <a href="/images/CodeAlphaCertificate.pdf" class="btn">[Credentials]</a></h2>
-                        <h3>Python Programmer [Virtual Internship]</h3>
-                        <span>JAN 2025 - FEB 2025</span>
-                        <p>
-                            Developed and implemented Python projects, enhance my python skills during period. Increase
-                            efficiency of code and stability. Gained valuable experience in real world projects.
-                        </p>
+                        <div class="label-row">
+                            <h3>Software Developer - Innovative Soch India</h3>
+                        </div>
+                        <p class="meta">Dec 2025 - Present - Panipat, Haryana</p>
+                        <p>Architected and deployed an ERP backend using Python and FastAPI for 100+ concurrent users
+                            with 99.5% uptime. Implemented JWT/OAuth2 RBAC to cut unauthorized access by 95%, and tuned
+                            SQLAlchemy/PostgreSQL queries to improve responses by 40% and reduce server load by 30%.</p>
                     </div>
                 </div>
-                <!-- Experience 2 -->
-                <div class="timeline-card">
+                <div class="timeline-item reveal">
+                    <div class="dot"></div>
                     <div class="timeline-content">
-                        <h2> Cybersecurity Intern <a href="/images/cyberpage1intr.jpg" class="btn">[Credentials]</a>
-                        </h2>
-                        <h3>CISCO @ICT ACADEMY</h3>
-                        <span>OCT 2024 - NOV 2024</span>
-                        <p>
-                            Monitored and analyzed threats, supported security measures, and utilized essential
-                            cybersecurity tools to safeguard critical systems.
-                        </p>
+                        <div class="label-row">
+                            <h3>Python Programmer Intern - Code Alpha</h3>
+                            <a class="link" href="images/CodeAlphaCertificate.pdf" target="_blank">Credentials</a>
+                        </div>
+                        <p class="meta">Jan 2025 - Apr 2025 - Remote</p>
+                        <p>Built Python projects (file management with shutil, JSON data pipelines), enhanced
+                            problem-solving accuracy by 80%, and completed 5 production-grade mini-projects.</p>
                     </div>
                 </div>
-                <!-- Experience 3 -->
-                <div class="timeline-card">
+                <div class="timeline-item reveal">
+                    <div class="dot"></div>
                     <div class="timeline-content">
-                        <h2>NSS Volunteer <a href="/images/NSS.jpeg" class="btn">[Credentials]</a></h2>
-                        <h3>Arya Sr. Sec. School</h3>
-                        <span>Social Responsibility Initiative</span>
-                        <p>
-                            Engaged in community service projects to foster social awareness and personal growth. Led
-                            initiatives to address key community challenges.
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section class="skills-section" id="skills">
-        <div class="container">
-            <h1 class="section-title">My Skills</h1>
-            <marquee behavior="action">
-                <p class="section-description">Technical proficiencies and tools that empower my development workflow.
-                </p>
-            </marquee>
-            <!-- Programming Skills -->
-            <div class="skills-category">
-                <h2>Programming Skills</h2>
-                <div class="skills-container">
-                    <!-- Skill Item -->
-                    <div class="skill">
-                        <i class="fab fa-python"></i>
-                        <h3>Python</h3>
-                        <div class="progress-bar">
-                            <div class="progress python"></div>
+                        <div class="label-row">
+                            <h3>Cyber Security Training - ICT Academy</h3>
+                            <a class="link" href="images/cyberpage1intr.jpg" target="_blank">Credentials</a>
                         </div>
-                    </div>
-                    <div class="skill">
-                        <i class="fas fa-code"></i>
-                        <h3>C++</h3>
-                        <div class="progress-bar">
-                            <div class="progress cpp"></div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <i class="fas fa-code"></i>
-                        <h3>SQL</h3>
-                        <div class="progress-bar">
-                            <div class="progress cprog"></div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <i class="fab fa-html5"></i>
-                        <h3>HTML5</h3>
-                        <div class="progress-bar">
-                            <div class="progress html"></div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <i class="fab fa-css3-alt"></i>
-                        <h3>CSS</h3>
-                        <div class="progress-bar">
-                            <div class="progress css"></div>
-                        </div>
+                        <p class="meta">Nov 2024 - Dec 2024 - Panipat, Haryana</p>
+                        <p>Learned network security, system protection, and risk management practices; boosted security
+                            compliance by 85% via baselines and controls; improved application security 25% through
+                            network protocol hardening.</p>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <!-- Tools & Platforms -->
-            <div class="skills-category">
-                <h2>Tools & Platforms</h2>
-                <div class="skills-container tools-container">
-                    <div class="tool">
-                        <i class="fab fa-github"></i>
-                        <h3>Git & GitHub</h3>
+        <section class="skills" id="skills">
+            <div class="section-head">
+                <p class="eyebrow">Skills</p>
+                <h2>Toolbox</h2>
+                <p class="muted">Technical and soft skills that I use to ship products.</p>
+            </div>
+            <div class="skill-grid">
+                <div class="skill-card reveal">
+                    <div class="skill-title"><i class="fab fa-python"></i>
+                        <h3>Languages</h3>
                     </div>
-                    <div class="tool">
-                        <i class="fab fa-aws"></i>
-                        <h3>AWS</h3>
+                    <ul>
+                        <li>Python, SQL, JavaScript, HTML/CSS, C/C++</li>
+                    </ul>
+                </div>
+                <div class="skill-card reveal">
+                    <div class="skill-title"><i class="fa fa-gears"></i>
+                        <h3>Frameworks</h3>
                     </div>
-                    <div class="tool">
-                        <i class="fas fa-code"></i>
-                        <h3>VS Code</h3>
+                    <ul>
+                        <li>FastAPI, Django, Flask, Django REST Framework</li>
+                        <li>LangChain (GenAI), React (basics), Pandas</li>
+                    </ul>
+                </div>
+                <div class="skill-card reveal">
+                    <div class="skill-title"><i class="fa fa-database"></i>
+                        <h3>Databases</h3>
                     </div>
+                    <ul>
+                        <li>MySQL, PostgreSQL, SQLite, MongoDB</li>
+                        <li>SQLAlchemy ORM, query tuning, indexing</li>
+                    </ul>
+                </div>
+                <div class="skill-card reveal">
+                    <div class="skill-title"><i class="fa fa-toolbox"></i>
+                        <h3>Tools</h3>
+                    </div>
+                    <ul>
+                        <li>Git/GitHub, Docker, VS Code, Postman, Vercel</li>
+                        <li>Web scraping (BeautifulSoup/requests)</li>
+                    </ul>
+                </div>
+                <div class="skill-card reveal">
+                    <div class="skill-title"><i class="fa fa-shield"></i>
+                        <h3>Security & CS</h3>
+                    </div>
+                    <ul>
+                        <li>JWT/OAuth2 auth, input hygiene, RBAC</li>
+                        <li>DSA, OOP, DBMS, Computer Networks</li>
+                    </ul>
+                </div>
+                <div class="skill-card reveal">
+                    <div class="skill-title"><i class="fa fa-comments"></i>
+                        <h3>Soft Skills</h3>
+                    </div>
+                    <ul>
+                        <li>Teamwork, leadership, problem solving, logic building</li>
+                        <li>Communication and documentation</li>
+                    </ul>
                 </div>
             </div>
+        </section>
 
-            <!-- Frameworks & Libraries -->
-            <div class="skills-category">
-                <h2>Frameworks & Libraries</h2>
-                <div class="skills-container frameworks-container">
-                    <div class="framework">
-                        <i class="fab fa-python"></i>
-                        <h3>Django</h3>
-                    </div>
-                    <div class="framework">
-                        <i class="fas fa-chart-bar"></i>
-                        <h3>Pandas</h3>
-                    </div>
-                    <div class="framework">
-                        <i class="fab fa-bootstrap"></i>
-                        <h3>Bootstrap</h3>
-                    </div>
+        <section class="certifications">
+            <div class="section-head">
+                <p class="eyebrow">Credentials</p>
+                <h2>Certifications</h2>
+            </div>
+            <div class="cert-grid">
+                <div class="cert-card reveal">
+                    <p class="badge">2025</p>
+                    <h3>Python Programmer</h3>
+                    <p class="muted">Code Alpha - Virtual Internship</p>
+                    <a class="link" href="images/CodeAlphaCertificate.pdf" target="_blank">View certificate</a>
+                </div>
+                <div class="cert-card reveal">
+                    <p class="badge">2023</p>
+                    <h3>GeeksforGeeks Certification</h3>
+                    <p class="muted">Python Programming (Basics to Advanced)</p>
+                </div>
+                <div class="cert-card reveal">
+                    <p class="badge">2024</p>
+                    <h3>Cybersecurity</h3>
+                    <p class="muted">Cisco @ ICT Academy</p>
+                    <a class="link" href="images/cyberpage1intr.jpg" target="_blank">View certificate</a>
+                </div>
+                <div class="cert-card reveal">
+                    <p class="badge">2021</p>
+                    <h3>Writing Competetion</h3>
+                    <p class="muted">College certification</p>
                 </div>
             </div>
+        </section>
 
-            <!-- Databases -->
-            <div class="skills-category">
-                <h2>Databases</h2>
-                <div class="skills-container databases-container">
-                    <div class="database">
-                        <i class="fas fa-database"></i>
-                        <h3>MySQL</h3>
+        <section class="projects" id="project">
+            <div class="section-head">
+                <p class="eyebrow">Projects</p>
+                <h2>Things I've built</h2>
+            </div>
+            <div class="project-grid">
+                <article class="project-card reveal">
+                    <img src="images/hotelprj.png" alt="Hotel Booking">
+                    <div class="project-body">
+                        <h3>Hotel Booking Management System</h3>
+                        <p>Django/FastAPI stack for railway-style room bookings with MySQL; vendor/user auth with JWT
+                            via email, admin dashboard, and responsive UI in HTML/CSS/JS.</p>
+                        <div class="links"><a href="https://github.com/Nitinsharwal/Django_Hotel_project"
+                                target="_blank">Code</a><a href="https://sharwal-nitin-hotel.vercel.app/"
+                                target="_blank">Live</a></div>
                     </div>
-                    <div class="database">
-                        <i class="fas fa-database"></i>
-                        <h3>SQLite</h3>
+                </article>
+                <article class="project-card reveal">
+                    <img src="images/AutomatableTasks.jpg" alt="AI chatbot">
+                    <div class="project-body">
+                        <h3>AI-Powered Conversational Chatbot</h3>
+                        <p>Streamlit + LangChain app using Hugging Face Mistral-8x7B for context-aware answers; prompt
+                            tuning and conversation UI for coherent interactions.</p>
+                        <div class="links"><a href="https://github.com/Nitinsharwal" target="_blank">Repo</a></div>
                     </div>
-                </div>
+                </article>
+                <article class="project-card reveal">
+                    <img src="images/expenseTracker.png" alt="Expense Tracker">
+                    <div class="project-body">
+                        <h3>Expense Tracker</h3>
+                        <p>Authenticated expense tracking with MySQL storage, fast responses, and clean UI.</p>
+                        <div class="links"><a href="https://github.com/Nitinsharwal/Django_Hotel_project"
+                                target="_blank">Code</a><a href="https://expense-tracker-chetan-sharwal.vercel.app/"
+                                target="_blank">Live</a></div>
+                    </div>
+                </article>
+                <article class="project-card reveal">
+                    <img src="images/CricketCraze.png" alt="Cricket Craze app">
+                    <div class="project-body">
+                        <h3>Cricket Craze</h3>
+                        <p>Dynamic Django app with live match details, scorecards, and team statistics.</p>
+                        <div class="links"><a href="https://github.com/Nitinsharwal/cricket_craze"
+                                target="_blank">Code</a></div>
+                    </div>
+                </article>
+                <article class="project-card reveal">
+                    <img src="images/weather.png" alt="Weather App">
+                    <div class="project-body">
+                        <h3>Weather Web Application</h3>
+                        <p>Real-time weather using OpenWeatherMap API with location search and clean UX.</p>
+                        <div class="links"><a href="https://github.com/Nitinsharwal/weather_app"
+                                target="_blank">Code</a></div>
+                    </div>
+                </article>
+                <article class="project-card reveal">
+                    <img src="images/passwmgr.png" alt="Password Manager">
+                    <div class="project-body">
+                        <h3>Password Manager</h3>
+                        <p>Lightweight password vault storing encrypted credentials locally.</p>
+                        <div class="links"><a href="https://github.com/Nitinsharwal/Password-manager"
+                                target="_blank">Code</a></div>
+                    </div>
+                </article>
+                <article class="project-card reveal">
+                    <img src="images/stc.webp" alt="Stock Portfolio Tracker">
+                    <div class="project-body">
+                        <h3>Stock Portfolio Tracker</h3>
+                        <p>Web tool to monitor holdings and simulate market-like portfolio updates.</p>
+                        <div class="links"><a href="https://github.com/Nitinsharwal/Stock-Portfolio-Tracker"
+                                target="_blank">Code</a></div>
+                    </div>
+                </article>
+                <article class="project-card reveal">
+                    <img src="images/AutomatableTasks.jpg" alt="Task automation">
+                    <div class="project-body">
+                        <h3>Task Automation Scripts</h3>
+                        <p>Utility scripts to organize files by extension and automate everyday chores.</p>
+                        <div class="links"><a href="https://github.com/Nitinsharwal/Task-Automation-File-organization"
+                                target="_blank">Code</a></div>
+                    </div>
+                </article>
             </div>
-        </div>
-    </section>
-    <!-- ------------------------education section-------------- -->
-    <section class="education" id="education">
-        <div class="container">
-            <h1>My Education</h1>
-            <marquee>
-                <h2>Academic milestones that have shaped my professional journey.</h2>
-            </marquee>
-            <div class="education-grid">
-                <!-- Education 1 -->
-                <div class="education-card">
-                    <h2>Bachelor's in Computer And Application</h2>
-                    <h3>Kurukshetra University</h3>
-                    <span>2022 - 2025</span>
-                    <p>Graduated with honors, focusing on my professional development, technology, and enviroment.</p>
-                </div>
-                <!-- Education 2 -->
-                <div class="education-card">
-                    <h2>Intermediate</h2>
-                    <h3>Arya Senior Secondary School HBSE</h3>
-                    <span>2019 - 2022</span>
-                    <p>Excelled in science and mathematics, laying the foundation for my technical expertise.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ----project section-------------- -->
-    <section id="project" class="projects-section">
-        <h2 class="section-title">My Projects</h2>
-        <div class="projects-container">
-            <div class="project-card">
-                <img src="images/hotelprj.png
-                " alt="Project 1 Thumbnail" class="project-image">
-                <div class="project-content">
-                    <h3 class="project-title">Hotel Booking Management System</h3>
-                    <p class="project-description">A web-based Hotel Booking Management System built with Django. This project allows users to book rooms, manage reservations, and enables admins to manage hotel services and customers efficiently.</p>
-                    <a href="https://github.com/Nitinsharwal/Django_Hotel_project" class="project-link" target="_blank">Source Code
-                    </a>
-                    <a href="https://sharwal-nitin-hotel.vercel.app/" class="project-link" target="_blank">View live 👁️</a>
-                </div>
-            </div>
-            <div class="project-card">
-                <img src="images/expenseTracker.png
-                " alt="Project 1 Thumbnail" class="project-image">
-                <div class="project-content">
-                    <h3 class="project-title">Expense Tracker</h3>
-                    <p class="project-description">A web application that allows users to track expenses and manage financial records. Provides registration, login, and logout pages for authentication with faster response times using MySQL for secure database management.</p>
-                    <a href="https://github.com/Nitinsharwal/Django_Hotel_project" class="project-link" target="_blank">Source Code
-                    </a>
-                    <a href="https://expense-tracker-chetan-sharwal.vercel.app/" class="project-link" target="_blank">View live 👁️</a>
-                </div>
-            </div>
-            <div class="project-card">
-                <img src="images/CricketCraze.png
-                " alt="Project 1 Thumbnail" class="project-image">
-                <div class="project-content">
-                    <h3 class="project-title">Cricket Craze Web Application</h3>
-                    <p class="project-description">Developed a dynamic Cricket Craze web app using Django, featuring live match details, scorecards, and team stats</p>
-                    <a href="https://github.com/Nitinsharwal/cricket_craze" class="project-link" target="_blank">View
-                        on GitHub</a>
-                </div>
-            </div>
-            <div class="project-card">
-                <img src="images/weather.png
-                " alt="Project 2 Thumbnail" class="project-image">
-                <div class="project-content">
-                    <h3 class="project-title">Weather Web Application</h3>
-                    <p class="project-description">Built a Django-based weather app using OpenWeatherMap API to show real-time weather by location or user input.</p>
-                    <a href="https://github.com/Nitinsharwal/weather_app" class="project-link" target="_blank">View
-                        on GitHub</a>
-                </div>
-            </div>
-            <div class="project-card">
-                <img src="images/passwmgr.png" alt="Project 2 Thumbnail" class="project-image">
-                <div class="project-content">
-                    <h3 class="project-title">Password Manager</h3>
-                    <p class="project-description">Secure password manager that can store our password in encrypted form
-                        in a file.</p>
-                    <a href="https://github.com/Nitinsharwal/Password-manager" class="project-link" target="_blank">View
-                        on GitHub</a>
-                </div>
-            </div>
-            <div class="project-card">
-                <img src="images/stc.webp" alt="Project 3" class="project-image">
-                <div class="project-content">
-                    <h3 class="project-title">Stock-Portfolio-Tracker</h3>
-                    <p class="project-description">A basic Stock-Portfolio-Tracker web application that work like real Stock-Market application.
-                        framework.</p>
-                    <a href="https://github.com/Nitinsharwal/Stock-Portfolio-Tracker" class="project-link"
-                        target="_blank">View on GitHub</a>
-                </div>
-            </div>
-            <div class="project-card">
-                <img src="images/AutomatableTasks.jpg" alt="Project 4" class="project-image">
-                <div class="project-content">
-                    <h3 class="project-title">Task Automation</h3>
-                    <p class="project-description">A simple Task automation scripts that can organize various file
-                        extenstions in different folders.</p>
-                    <a href="https://github.com/Nitinsharwal/Task-Automation-File-organization" class="project-link"
-                        target="_blank">View on GitHub</a>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <h1>Contact Me</h1>
-            <p>Feel free to reach out! I'd love to hear from you.</p>
-            <div class="contact-form-container">
-                <!-- Contact Form -->
-                <form action="mailto:youremail@example.com" method="post" enctype="text/plain" class="contact-form" autocomplete="on">
-                    <div class="form-group">
-                        <label for="name">Your Name</label>
+        <section class="education" id="education">
+            <div class="section-head">
+                <p class="eyebrow">Education</p>
+                <h2>Academic Path</h2>
+            </div>
+            <div class="edu-grid">
+                <div class="edu-card reveal">
+                    <p class="meta">2022 - 2025</p>
+                    <h3>Bachelor of Computer Applications (CGPA: 7.2)</h3>
+                    <p class="muted">Kurukshetra University, Haryana</p>
+                </div>
+                <div class="edu-card reveal">
+                    <p class="meta">2021 - 2022</p>
+                    <h3>Class XII (PCM)</h3>
+                    <p class="muted">Arya Senior Secondary School, Panipat</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="extras">
+            <div class="section-head">
+                <p class="eyebrow">Beyond code</p>
+                <h2>Achievements & Interests</h2>
+            </div>
+            <div class="extra-grid">
+                <div class="extra-card reveal">
+                    <h3>Achievements</h3>
+                    <ul>
+                        <li>Got 1st Position in Code War Competion in College </li>
+                        <li>NSS volunteer leading community initiatives.</li>
+                    </ul>
+                </div>
+                <div class="extra-card reveal">
+                    <h3>Languages</h3>
+                    <ul>
+                        <li>Hindi - Native</li>
+                        <li>English - Professional</li>
+                    </ul>
+                </div>
+                <div class="extra-card reveal">
+                    <h3>Interests</h3>
+                    <ul>
+                        <li>Playing cricket and Outdoor games.</li>
+                        <li>Building side projects and automation tools.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact" id="contact">
+            <div class="section-head">
+                <p class="eyebrow">Contact</p>
+                <h2>Let's build something</h2>
+                <p class="muted">I'm quick to respond on email and LinkedIn.</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-card reveal">
+                    <div class="contact-item"><i class="fa fa-phone"></i><a href="tel:+918221985564">+91 8221985564</a>
+                    </div>
+                    <div class="contact-item"><i class="fa fa-envelope"></i><a
+                            href="mailto:nitinparjapat94@gmail.com">nitinparjapat94@gmail.com</a></div>
+                    <div class="contact-item"><i class="fa fa-location-dot"></i><span>Panipat, Haryana, India</span>
+                    </div>
+                    <div class="contact-item"><i class="fab fa-linkedin"></i><a
+                            href="https://www.linkedin.com/in/chetan-sharwal/" target="_blank">LinkedIn</a></div>
+                    <div class="contact-item"><i class="fab fa-github"></i><a href="https://github.com/Nitinsharwal"
+                            target="_blank">GitHub</a></div>
+                </div>
+                <form class="contact-form reveal" action="mailto:nitinparjapat94@gmail.com" method="post"
+                    enctype="text/plain" autocomplete="on">
+                    <div class="form-row">
+                        <label for="name">Name</label>
                         <input type="text" id="name" name="name" required>
                     </div>
-                    <div class="form-group">
-                        <label for="email">Your Email</label>
+                    <div class="form-row">
+                        <label for="email">Email</label>
                         <input type="email" id="email" name="email" required>
                     </div>
-                    <div class="form-group">
-                        <label for="phone">Your Phone No.</label>
-                        <input type="tel" id="phone" name="phone" required>
+                    <div class="form-row">
+                        <label for="message">Project details</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
                     </div>
-                    <div class="form-group">
-                        <label for="message">Your Message</label>
-                        <textarea id="message" name="message" required></textarea>
-                    </div>
-                    <button class="btn" type="submit">Send Message</button>
+                    <button class="btn primary" type="submit">Send message</button>
                 </form>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
+
     <footer>
-        <p>Lets Connect With Me</p>
-        <div class="social-icons">
-            <a href="https://www.linkedin.com/in/chetan-sharwal/" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/Nitinsharwal" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="mailto:nitinparjapat94@gmail.com"><i class="fa fa-envelope" aria-hidden="true"></i></a>
-        </div>
-        <p>&#xA9; Chetan-Portfolio. All rights reserved ©2025.</p>
+        <p>
+            Copyright <span id="year"></span> Nitin Sharwal - Built with care and a lot of Python.
+        </p>
+        <a class="link" href="#home">Back to top</a>
     </footer>
+
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
+
 </html>

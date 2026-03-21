@@ -1,33 +1,39 @@
-document
-  .querySelector(".navbar-selector")
-  .addEventListener("change", function () {
-    const selectedValue = this.value;
-    if (selectedValue) {
-      window.location.href = selectedValue; 
-    }
-  });
-  var typed = new Typed(".highlight", {
-    strings: [
-      "Python Developer",
-      "Software Developer",
-      "Data Engineer",
-      "Backend Developer",
-    ],
-    typeSpeed: 100,  
-    backSpeed: 50,   
-    backDelay: 1000, 
-    loop: true
-  });
+document.addEventListener('DOMContentLoaded', () => {
+  const navToggle = document.querySelector('.nav-toggle');
+  const navLinks = document.querySelector('.nav-links');
 
-  function toggleSidebar() {
-    var navbar = document.querySelector(".navbar-selector");
-    if (window.innerWidth <= 768) { // Only toggle if screen width is small
-        if (navbar.style.display === "none" || navbar.style.display === "") {
-            navbar.style.display = "flex";
-        } else {
-            navbar.style.display = "none";
+  if (navToggle && navLinks) {
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+
+    navLinks.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
+  }
+
+  if (typeof Typed !== 'undefined') {
+    new Typed('.highlight', {
+      strings: ['Software developer', 'FastAPI or Django Developer', 'Data Science and Engineer' ,'GenAI Enthusiast'],
+      typeSpeed: 70,
+      backSpeed: 40,
+      backDelay: 1200,
+      loop: true,
+      smartBackspace: true,
+    });
+  }
+
+  const observer = new IntersectionObserver(
+    (entries, obs) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          obs.unobserve(entry.target);
         }
-    }
-}
-
-  
+      });
+    },
+    { threshold: 0.2 }
+  );
+  document.getElementById("year").textContent = new Date().getFullYear();
+  document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+});
