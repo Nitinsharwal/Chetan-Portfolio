@@ -16,6 +16,10 @@
 </head>
 
 <body>
+    <div class="scroll-progress" aria-hidden="true"></div>
+    <div class="spotlight" aria-hidden="true"></div>
+    <div class="grain" aria-hidden="true"></div>
+
     <header class="navbar" id="top">
         <div class="brand">
             <img src="images/gifhy-unscreen.gif" alt="CS logo" class="brand-mark">
@@ -40,7 +44,7 @@
 
     <main>
         <section class="hero" id="home">
-            <div class="hero-copy reveal">
+            <div class="hero-copy reveal" data-reveal="left">
                 <p class="eyebrow">Backend / FastAPI / GenAI and Data Engineer curious</p>
                 <h1>Hi, I'm Chetan - A <span class="highlight"></span></h1>
                 <p class="lede">Software Developer based in Panipat, Haryana. I build scalable web apps with Python,
@@ -68,9 +72,24 @@
                     <span><i class="fa fa-envelope"></i> nitinparjapat94@gmail.com</span>
                 </div>
             </div>
-            <div class="hero-visual reveal">
+            <div class="hero-visual reveal" data-reveal="right">
                 <div class="orb"></div>
-                <div class="avatar-card">
+                <svg class="blob" viewBox="0 0 200 200" aria-hidden="true">
+                    <defs>
+                        <linearGradient id="blobGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#6be1ff"/>
+                            <stop offset="55%" stop-color="#b48cff"/>
+                            <stop offset="100%" stop-color="#ff7ab8"/>
+                        </linearGradient>
+                    </defs>
+                    <path fill="url(#blobGrad)">
+                        <animate attributeName="d" dur="14s" repeatCount="indefinite"
+                            values="M44,-58C56,-49,63,-33,67,-16C71,1,71,18,63,32C55,46,38,57,20,63C2,69,-17,70,-32,62C-47,53,-58,36,-63,18C-68,0,-67,-19,-58,-32C-49,-45,-32,-52,-15,-58C2,-64,18,-67,44,-58Z;
+                                    M48,-62C62,-52,73,-37,73,-22C73,-7,62,8,54,24C46,40,40,58,26,65C12,71,-9,67,-26,59C-43,52,-57,40,-63,25C-69,9,-67,-9,-60,-25C-53,-40,-41,-53,-26,-61C-11,-69,5,-72,21,-72C37,-71,33,-72,48,-62Z;
+                                    M44,-58C56,-49,63,-33,67,-16C71,1,71,18,63,32C55,46,38,57,20,63C2,69,-17,70,-32,62C-47,53,-58,36,-63,18C-68,0,-67,-19,-58,-32C-49,-45,-32,-52,-15,-58C2,-64,18,-67,44,-58Z"/>
+                    </path>
+                </svg>
+                <div class="avatar-card float" data-tilt>
                     <div class="avatar-frame">
                         <img src="images/pass 2.jpg" alt="Chetan portrait">
                     </div>
@@ -224,6 +243,39 @@
                     </ul>
                 </div>
             </div>
+            <div class="marquee" aria-hidden="true">
+                <div class="marquee-track">
+                    <span class="marquee-item"><i class="fab fa-python"></i>Python</span>
+                    <span class="marquee-item"><i class="fa fa-bolt"></i>FastAPI</span>
+                    <span class="marquee-item"><i class="fa fa-leaf"></i>Django</span>
+                    <span class="marquee-item"><i class="fa fa-flask"></i>Flask</span>
+                    <span class="marquee-item"><i class="fa fa-database"></i>PostgreSQL</span>
+                    <span class="marquee-item"><i class="fa fa-database"></i>MySQL</span>
+                    <span class="marquee-item"><i class="fa fa-leaf"></i>MongoDB</span>
+                    <span class="marquee-item"><i class="fab fa-react"></i>React</span>
+                    <span class="marquee-item"><i class="fab fa-js"></i>JavaScript</span>
+                    <span class="marquee-item"><i class="fab fa-docker"></i>Docker</span>
+                    <span class="marquee-item"><i class="fab fa-git-alt"></i>Git</span>
+                    <span class="marquee-item"><i class="fa fa-robot"></i>LangChain</span>
+                    <span class="marquee-item"><i class="fa fa-chart-line"></i>Pandas</span>
+                    <span class="marquee-item"><i class="fa fa-shield"></i>JWT / OAuth2</span>
+                    <!-- duplicate for seamless loop -->
+                    <span class="marquee-item"><i class="fab fa-python"></i>Python</span>
+                    <span class="marquee-item"><i class="fa fa-bolt"></i>FastAPI</span>
+                    <span class="marquee-item"><i class="fa fa-leaf"></i>Django</span>
+                    <span class="marquee-item"><i class="fa fa-flask"></i>Flask</span>
+                    <span class="marquee-item"><i class="fa fa-database"></i>PostgreSQL</span>
+                    <span class="marquee-item"><i class="fa fa-database"></i>MySQL</span>
+                    <span class="marquee-item"><i class="fa fa-leaf"></i>MongoDB</span>
+                    <span class="marquee-item"><i class="fab fa-react"></i>React</span>
+                    <span class="marquee-item"><i class="fab fa-js"></i>JavaScript</span>
+                    <span class="marquee-item"><i class="fab fa-docker"></i>Docker</span>
+                    <span class="marquee-item"><i class="fab fa-git-alt"></i>Git</span>
+                    <span class="marquee-item"><i class="fa fa-robot"></i>LangChain</span>
+                    <span class="marquee-item"><i class="fa fa-chart-line"></i>Pandas</span>
+                    <span class="marquee-item"><i class="fa fa-shield"></i>JWT / OAuth2</span>
+                </div>
+            </div>
         </section>
 
         <section class="certifications">
@@ -263,8 +315,8 @@
                 <h2>Things I've built</h2>
             </div>
             <div class="project-grid">
-                <article class="project-card reveal">
-                    <img src="images/hotelprj.png" alt="Hotel Booking">
+                <article class="project-card reveal" data-tilt>
+                    <div class="img-wrap"><img src="images/hotelprj.png" alt="Hotel Booking"></div>
                     <div class="project-body">
                         <h3>Hotel Booking Management System</h3>
                         <p>Django/FastAPI stack for railway-style room bookings with MySQL; vendor/user auth with JWT
@@ -274,8 +326,8 @@
                                 target="_blank">Live</a></div>
                     </div>
                 </article>
-                <article class="project-card reveal">
-                    <img src="images/AutomatableTasks.jpg" alt="AI chatbot">
+                <article class="project-card reveal" data-tilt>
+                    <div class="img-wrap"><img src="images/AutomatableTasks.jpg" alt="AI chatbot"></div>
                     <div class="project-body">
                         <h3>AI-Powered Conversational Chatbot</h3>
                         <p>Streamlit + LangChain app using Hugging Face Mistral-8x7B for context-aware answers; prompt
@@ -283,8 +335,8 @@
                         <div class="links"><a href="https://github.com/Nitinsharwal" target="_blank">Repo</a></div>
                     </div>
                 </article>
-                <article class="project-card reveal">
-                    <img src="images/expenseTracker.png" alt="Expense Tracker">
+                <article class="project-card reveal" data-tilt>
+                    <div class="img-wrap"><img src="images/expenseTracker.png" alt="Expense Tracker"></div>
                     <div class="project-body">
                         <h3>Expense Tracker</h3>
                         <p>Authenticated expense tracking with MySQL storage, fast responses, and clean UI.</p>
@@ -293,8 +345,8 @@
                                 target="_blank">Live</a></div>
                     </div>
                 </article>
-                <article class="project-card reveal">
-                    <img src="images/CricketCraze.png" alt="Cricket Craze app">
+                <article class="project-card reveal" data-tilt>
+                    <div class="img-wrap"><img src="images/CricketCraze.png" alt="Cricket Craze app"></div>
                     <div class="project-body">
                         <h3>Cricket Craze</h3>
                         <p>Dynamic Django app with live match details, scorecards, and team statistics.</p>
@@ -302,8 +354,8 @@
                                 target="_blank">Code</a></div>
                     </div>
                 </article>
-                <article class="project-card reveal">
-                    <img src="images/weather.png" alt="Weather App">
+                <article class="project-card reveal" data-tilt>
+                    <div class="img-wrap"><img src="images/weather.png" alt="Weather App"></div>
                     <div class="project-body">
                         <h3>Weather Web Application</h3>
                         <p>Real-time weather using OpenWeatherMap API with location search and clean UX.</p>
@@ -311,8 +363,8 @@
                                 target="_blank">Code</a></div>
                     </div>
                 </article>
-                <article class="project-card reveal">
-                    <img src="images/passwmgr.png" alt="Password Manager">
+                <article class="project-card reveal" data-tilt>
+                    <div class="img-wrap"><img src="images/passwmgr.png" alt="Password Manager"></div>
                     <div class="project-body">
                         <h3>Password Manager</h3>
                         <p>Lightweight password vault storing encrypted credentials locally.</p>
@@ -320,8 +372,8 @@
                                 target="_blank">Code</a></div>
                     </div>
                 </article>
-                <article class="project-card reveal">
-                    <img src="images/stc.webp" alt="Stock Portfolio Tracker">
+                <article class="project-card reveal" data-tilt>
+                    <div class="img-wrap"><img src="images/stc.webp" alt="Stock Portfolio Tracker"></div>
                     <div class="project-body">
                         <h3>Stock Portfolio Tracker</h3>
                         <p>Web tool to monitor holdings and simulate market-like portfolio updates.</p>
@@ -329,8 +381,8 @@
                                 target="_blank">Code</a></div>
                     </div>
                 </article>
-                <article class="project-card reveal">
-                    <img src="images/AutomatableTasks.jpg" alt="Task automation">
+                <article class="project-card reveal" data-tilt>
+                    <div class="img-wrap"><img src="images/AutomatableTasks.jpg" alt="Task automation"></div>
                     <div class="project-body">
                         <h3>Task Automation Scripts</h3>
                         <p>Utility scripts to organize files by extension and automate everyday chores.</p>
@@ -435,6 +487,8 @@
         </p>
         <a class="link" href="#home">Back to top</a>
     </footer>
+
+    <button class="back-top" id="backTop" aria-label="Back to top"><i class="fa fa-arrow-up"></i></button>
 
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script src="script.js" defer></script>
