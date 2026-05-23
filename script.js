@@ -1,12 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const isCoarse = window.matchMedia('(pointer: coarse)').matches;
 
-  /* ---------- Year ---------- */
+  /* Year */
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  /* ---------- Mobile nav ---------- */
+  /* Mobile nav */
   const navToggle = document.querySelector('.nav-toggle');
   const navLinks = document.querySelector('.nav-links');
   if (navToggle && navLinks) {
@@ -28,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ---------- Typed.js headline ---------- */
+  /* Typed.js headline */
   if (typeof Typed !== 'undefined') {
     new Typed('.highlight', {
       strings: ['Software Developer', 'FastAPI / Django Developer', 'Data Engineer', 'GenAI Enthusiast'],
@@ -40,94 +39,41 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ---------- Reveal on scroll ---------- */
-  const revealEls = document.querySelectorAll('.reveal');
+  /* Reveal on scroll (IntersectionObserver, no scroll listener) */
   const io = new IntersectionObserver(
     (entries, obs) => {
-      entries.forEach((entry, i) => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          // small stagger by index in batch
-          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          entry.target.classList.add('visible');
           obs.unobserve(entry.target);
         }
       });
     },
-    { threshold: 0.14, rootMargin: '0px 0px -40px 0px' }
+    { threshold: 0.12, rootMargin: '0px 0px -60px 0px' }
   );
-  revealEls.forEach((el) => io.observe(el));
+  document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
 
-  /* ---------- Scroll progress + back-to-top ---------- */
+  /* Scroll progress + back-to-top — rAF-throttled, transform only */
   const bar = document.querySelector('.scroll-progress');
   const backTop = document.getElementById('backTop');
-  const updateScroll = () => {
+  let ticking = false;
+  const onScroll = () => {
     const h = document.documentElement;
     const scrolled = h.scrollTop / (h.scrollHeight - h.clientHeight || 1);
-    if (bar) bar.style.width = (scrolled * 100).toFixed(2) + '%';
-    if (backTop) backTop.classList.toggle('show', h.scrollTop > 480);
+    if (bar) bar.style.transform = `scaleX(${scrolled})`;
+    if (backTop) {
+      const show = h.scrollTop > 480;
+      if (show !== backTop.classList.contains('show')) backTop.classList.toggle('show', show);
+    }
+    ticking = false;
   };
-  window.addEventListener('scroll', updateScroll, { passive: true });
-  updateScroll();
+  window.addEventListener('scroll', () => {
+    if (!ticking) { requestAnimationFrame(onScroll); ticking = true; }
+  }, { passive: true });
+  onScroll();
   if (backTop) backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-  /* ---------- Aurora spotlight follows the cursor ---------- */
-  if (!isCoarse && !prefersReduced) {
-    const spot = document.querySelector('.spotlight');
-    if (spot) {
-      let tx = window.innerWidth / 2, ty = window.innerHeight / 2;
-      let cx = tx, cy = ty;
-      let raf = null;
-      window.addEventListener('mousemove', (e) => {
-        tx = e.clientX; ty = e.clientY;
-        if (!spot.classList.contains('active')) spot.classList.add('active');
-        if (!raf) raf = requestAnimationFrame(animate);
-      });
-      window.addEventListener('mouseleave', () => spot.classList.remove('active'));
-      const animate = () => {
-        cx += (tx - cx) * 0.12;
-        cy += (ty - cy) * 0.12;
-        spot.style.setProperty('--sx', cx + 'px');
-        spot.style.setProperty('--sy', cy + 'px');
-        if (Math.abs(tx - cx) > 0.5 || Math.abs(ty - cy) > 0.5) {
-          raf = requestAnimationFrame(animate);
-        } else {
-          raf = null;
-        }
-      };
-    }
-  }
-
-  /* ---------- Magnetic buttons ---------- */
-  if (!isCoarse && !prefersReduced) {
-    document.querySelectorAll('.btn').forEach((btn) => {
-      btn.addEventListener('mousemove', (e) => {
-        const r = btn.getBoundingClientRect();
-        const x = e.clientX - r.left - r.width / 2;
-        const y = e.clientY - r.top - r.height / 2;
-        btn.style.transform = `translate(${x * 0.18}px, ${y * 0.25}px)`;
-      });
-      btn.addEventListener('mouseleave', () => { btn.style.transform = ''; });
-    });
-  }
-
-  /* ---------- 3D tilt on data-tilt + cards ---------- */
-  if (!isCoarse && !prefersReduced) {
-    const tiltEls = document.querySelectorAll('[data-tilt], .project-card, .skill-card, .card, .cert-card, .edu-card, .extra-card');
-    tiltEls.forEach((el) => {
-      el.addEventListener('mousemove', (e) => {
-        const r = el.getBoundingClientRect();
-        const px = (e.clientX - r.left) / r.width;
-        const py = (e.clientY - r.top) / r.height;
-        const rx = (py - 0.5) * -8;
-        const ry = (px - 0.5) * 10;
-        el.style.transform = `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-4px)`;
-        el.style.setProperty('--mx', (px * 100).toFixed(1) + '%');
-        el.style.setProperty('--my', (py * 100).toFixed(1) + '%');
-      });
-      el.addEventListener('mouseleave', () => { el.style.transform = ''; });
-    });
-  }
-
-  /* ---------- Smooth anchor scroll ---------- */
+  /* Smooth anchor scroll */
   document.querySelectorAll('a[href^="#"]').forEach((a) => {
     a.addEventListener('click', (e) => {
       const id = a.getAttribute('href');
